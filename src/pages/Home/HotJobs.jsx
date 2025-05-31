@@ -9,6 +9,7 @@ const HotJobs = () => {
         fetch("http://localhost:5000/jobs")
             .then((res) => res.json())
             .then((data) => {
+                  console.log("API Response Data:", data);
                 setJobs(data);
                 setLoading(false);
             })
