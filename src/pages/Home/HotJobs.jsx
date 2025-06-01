@@ -6,7 +6,7 @@ const HotJobs = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/jobs")
+        fetch("http://localhost:3000/jobs")
             .then((res) => res.json())
             .then((data) => {
                   console.log("API Response Data:", data);

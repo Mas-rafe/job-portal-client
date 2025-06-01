@@ -24,7 +24,7 @@ const JobApply = () => {
             github,
             resume
         }
-        axios.post('http://localhost:5000/applications', application)
+        axios.post('http://localhost:3000/applications', application)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {

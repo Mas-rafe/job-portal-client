@@ -1,5 +1,7 @@
 import React from 'react';
 import UseAuth from '../../Hooks/UseAuth';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddJob = () => {
     const { user } = UseAuth();
@@ -21,8 +23,28 @@ const AddJob = () => {
         newJob.requirements = requirementsClean;
 
         //process responsibilities
-        newJob.responsibilities = newJob.responsibilities.split(',').map(res => res.trim())
+        newJob.responsibilities = newJob.responsibilities.split(',').map(res =>
+            res.trim())
+        newJob.status = "active"
         console.log(newJob);
+
+        //save data to the database
+        axios.post('http://localhost:3000/jobs', newJob)
+            .then(res => {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "This Job has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
     }
     return (
         <div>
@@ -132,6 +154,8 @@ const AddJob = () => {
 
                 <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
                     <legend className="fieldset-legend">HR Related Info</legend>
+
+
 
                     <label className="label">HR Name</label>
                     <input type="text" className="input" name='hr_name' placeholder="HR Name" />
