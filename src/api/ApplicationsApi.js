@@ -1,3 +1,3 @@
 export const myApplicationsPromise = email => {
-    return fetch(`http://localhost:3000/applications?email=${email}`).then(res => res.json())
+    return fetch(`https://career-code-server-tawny.vercel.app/applications?email=${email}`).then(res => res.json())
 }

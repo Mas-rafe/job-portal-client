@@ -1,13 +1,13 @@
-import React from 'react';
+
 import { motion } from "motion/react"
 import team1 from '../../assets/team/team1.jpg'
 import team2 from '../../assets/team/team2.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero bg-base-200 min-h-96">
+        <div className="hero bg-blue-100 rounded-2xl mt-2 ">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className='flex-1'>
+                <div className='flex-1 '>
                     <motion.img
                         src={team1}
                         animate={{y:[100,150,100]}}
@@ -39,7 +39,7 @@ const Banner = () => {
                             scale: 1,
                             transition: { duration: 4 }
                         }}
-                        className="text-5xl font-bold">remote <motion.span
+                        className="text-5xl font-bold">Remote <motion.span
                             animate={
                                 {
                                     color: ['#f5330a', '#619c07', '#3a22c9'],

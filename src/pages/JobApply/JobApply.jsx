@@ -24,7 +24,7 @@ const JobApply = () => {
             github,
             resume
         }
-        axios.post('http://localhost:3000/applications', application)
+        axios.post('https://career-code-server-tawny.vercel.app/applications', application)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {

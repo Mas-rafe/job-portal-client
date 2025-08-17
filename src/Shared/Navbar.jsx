@@ -15,18 +15,18 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <li><NavLink to="/" >Home</NavLink> </li>
+        <li className='font-semibold '><NavLink to="/" >Home</NavLink> </li>
         {/* for applicant links.check roles as well */}
         {
             user && <>
-                <li><NavLink to="/myApplications" >My Applications</NavLink> </li>
+                <li className='font-bold text-blue-500'><NavLink to="/myApplications" >My Applications</NavLink> </li>
             </>
         }
         {/* for recruiter.check role as well */}
         {
             user && <>
-                <li><NavLink to="/addJob" >Add Job</NavLink> </li>
-                <li><NavLink to="/myPostedJobs" >My Posted  Jobs</NavLink> </li>
+                <li className='font-bold text-blue-500'><NavLink to="/addJob" >Add Job</NavLink> </li>
+                <li className='font-semibold '><NavLink to="/myPostedJobs" >My Posted  Jobs</NavLink> </li>
             </>
         }
 
@@ -47,7 +47,10 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <div className='flex items-center '>
+                    <img width="46" height="46" className='ml-1' src="https://img.icons8.com/fluency/48/job.png" alt="job" />
+                    <a className="btn btn-ghost text-xl">JOB<span className='font-bold text-blue-700'>HUNT</span></a>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
