@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext/AuthContext';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext);
@@ -31,6 +32,8 @@ const Navbar = () => {
         }
 
     </>
+
+
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -60,6 +63,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+
+                
+                    <div className="">
+                        <a className="btn btn-ghost normal-case ">Theme</a>
+                    </div>
+                    <div className="flex-none">
+                        <ThemeToggle></ThemeToggle>
+                    </div>
+                
+
 
                 {
                     user ? <button className='btn' onClick={handleSignOut}>Sign OUt</button> :

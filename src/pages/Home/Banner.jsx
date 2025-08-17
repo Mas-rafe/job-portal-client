@@ -2,6 +2,7 @@
 import { motion } from "motion/react"
 import team1 from '../../assets/team/team1.jpg'
 import team2 from '../../assets/team/team2.jpg'
+import { Link } from "react-router";
 
 const Banner = () => {
     return (
@@ -51,7 +52,7 @@ const Banner = () => {
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                   <Link to="/myApplications"> <button className="btn btn-primary">Get Started</button></Link>
                 </div>
             </div>
         </div>
