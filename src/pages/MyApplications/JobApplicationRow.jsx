@@ -34,7 +34,7 @@ const JobApplicationRow = ({application,index}) => {
         </td>
         <td>Purple</td>
         <th>
-         <Link to={`/jobs/${_id}`}> <button className="btn btn-ghost btn-xs">details</button></Link>
+          <button className="btn btn-ghost btn-xs">details</button>
         </th>
       </tr>
     );
