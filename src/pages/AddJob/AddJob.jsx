@@ -48,26 +48,26 @@ const AddJob = () => {
     }
     return (
         <div>
-            <h2>please add a job</h2>
-            <form onSubmit={handleAddAJob}>
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <h2 className='text-center'>please add a job</h2>
+            <form onSubmit={handleAddAJob}  className='mx-auto justify-center items-center '>
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  max-w-4xl mx-auto border p-4">
                     <legend className="fieldset-legend">Basic Info</legend>
 
                     <label className="label">Job Title</label>
-                    <input type="text" className="input" name='title' placeholder="Job title" />
+                    <input type="text" className="input mx-auto w-3xl" name='title' placeholder="Job title" />
 
                     <label className="label">Company</label>
-                    <input type="text" className="input" name='company' placeholder="Company name" />
+                    <input type="text" className="input mx-auto w-3xl" name='company' placeholder="Company name" />
 
                     <label className="label">Location</label>
-                    <input type="text" className="input" name='location' placeholder="Location of the company" />
+                    <input type="text" className="input mx-auto w-3xl" name='location' placeholder="Location of the company" />
 
                     <label className="label">Company logo</label>
-                    <input type="text" className="input" name='company_logo' placeholder="Company logo url" />
+                    <input type="text" className="input mx-auto w-3xl" name='company_logo' placeholder="Company logo url" />
 
                 </fieldset>
                 {/* Job Type */}
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4  max-w-4xl mx-auto">
                     <legend className="fieldset-legend">Job Type</legend>
                     <div className="filter">
                         <input className="btn filter-reset" type="radio" name="jobType" aria-label="All" />
@@ -78,7 +78,7 @@ const AddJob = () => {
 
                 </fieldset>
                 {/*Job Category*/}
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4  max-w-4xl mx-auto">
                     <legend className="fieldset-legend">Job Category</legend>
 
                     <select defaultValue="Job Category" name='category' className="select">
@@ -90,17 +90,17 @@ const AddJob = () => {
 
                 </fieldset>
                 {/* Application Deadline */}
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4  max-w-4xl mx-auto">
                     <legend className="fieldset-legend">Application Deadline</legend>
 
                     <input type="date" name='deadline' className="input" />
 
                 </fieldset>
                 {/* Salary Range */}
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4  max-w-4xl mx-auto">
                     <legend className="fieldset-legend">Salary Range</legend>
 
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
                         <legend className="fieldset-legend"> Salary Range</legend>
                         <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
 
@@ -130,7 +130,7 @@ const AddJob = () => {
                 </fieldset>
 
                 {/* Job Description */}
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4  max-w-4xl mx-auto">
                     <legend className="fieldset-legend">Job Description </legend>
 
                     <textarea className='textarea' name="description" placeholder='Job Description' ></textarea>
@@ -138,21 +138,21 @@ const AddJob = () => {
                 </fieldset>
 
                 {/* Job Requirements */}
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  max-w-4xl mx-auto border p-4">
                     <legend className="fieldset-legend">Job Requirements </legend>
 
                     <textarea className='textarea' name="requirements" placeholder='Job Requirements(separate by comma)' ></textarea>
 
                 </fieldset>
                 {/* Job Responsibilities */}
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  max-w-4xl mx-auto border p-4">
                     <legend className="fieldset-legend">Job Responsibilities </legend>
 
                     <textarea className='textarea' name="responsibilities" placeholder='Job Responsibilities(separate by comma)' ></textarea>
 
                 </fieldset>
 
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box max-w-4xl mx-auto border p-4">
                     <legend className="fieldset-legend">HR Related Info</legend>
 
 
@@ -164,7 +164,7 @@ const AddJob = () => {
                     <input type="email" className="input" name='hr_email' defaultValue={user.email} placeholder="HR Email" />
                 </fieldset>
 
-                <input type="submit" className='btn' value="Add Job" />
+                <input type="submit" className='btn max-w-4xl w-full  mx-auto justify-center' value="Add Job" />
             </form>
         </div>
     );

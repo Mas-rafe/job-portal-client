@@ -1,24 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { Link } from "react-router";
 
-const JobApplicationRow = ({application,index}) => {
-  
-    const {_id,company,title,company_logo} = application;
-    
-    return (
-         <tr>
-        <th>
-          <label>
-           {index+1}
-          </label>
-        </th>
+
+const JobApplicationRow = ({ application, index }) => {
+  const { _id, company, title, company_logo, status } = application;
+
+  return (
+    <>
+      {/* ✅ Desktop & Tablet View (Table Row) */}
+      <tr className="hidden md:table-row">
+        <th>{index + 1}</th>
         <td>
           <div className="flex items-center gap-3">
             <div className="avatar">
               <div className="mask mask-squircle h-12 w-12">
-                <img
-                  src={company_logo}
-                  alt="Avatar Tailwind CSS Component" />
+                <img src={company_logo} alt={company} />
               </div>
             </div>
             <div>
@@ -28,16 +23,44 @@ const JobApplicationRow = ({application,index}) => {
           </div>
         </td>
         <td>
-          Zemlak, Daniel and Leannon
-          <br />
-          <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+          <span className="badge badge-outline">{status || "Pending"}</span>
         </td>
-        <td>Purple</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
+        <td>
+          <Link to={`/applications/${_id}`}>
+            <button className="btn btn-sm btn-primary">Details</button>
+          </Link>
+        </td>
       </tr>
-    );
+
+      {/* ✅ Mobile View (Card) */}
+      <div className="md:hidden border rounded-lg shadow-sm p-4 bg-white mb-3">
+        <div className="flex items-center gap-3">
+          <div className="avatar">
+            <div className="mask mask-squircle h-12 w-12">
+              <img src={company_logo} alt={company} />
+            </div>
+          </div>
+          <div>
+            <h4 className="font-bold">{company}</h4>
+            <p className="text-sm text-gray-500">{title}</p>
+          </div>
+        </div>
+
+        <div className="mt-2">
+          <p className="text-sm">
+            <span className="font-medium">Status:</span>{" "}
+            {status || "Pending"}
+          </p>
+        </div>
+
+        <div className="mt-3">
+          <Link to={`/applications/${_id}`}>
+            <button className="btn btn-sm btn-primary w-full">View Details</button>
+          </Link>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default JobApplicationRow;

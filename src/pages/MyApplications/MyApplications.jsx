@@ -11,7 +11,9 @@ const MyApplications = () => {
 
     return (
         <div>
-            <ApplicationStats></ApplicationStats>
+           <div className=" max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:w-7xl ">
+  <ApplicationStats />
+</div>
             <Suspense fallback={'loading your applications'}>
                 <ApplicationList myApplicationsPromise={myApplicationsPromise(user.email)}></ApplicationList> 
             </Suspense>
